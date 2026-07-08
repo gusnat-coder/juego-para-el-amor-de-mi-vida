@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nuestra Historia ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="hearts"></div>
+
+<div class="background"></div>
+
+<section id="inicio">
+
+<div class="glass">
+
+<h2 class="tituloPequeño">
+Nuestra Historia
+</h2>
+
+<h1>
+Agustín ❤️ Natasha
+</h1>
+
+<p class="frase" id="frase">
+
+"No importa la distancia...
+
+siempre encontraré el camino hacia ti."
+
+</p>
+
+<button id="btnComenzar">
+
+Comenzar ❤️
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<section id="intro" class="oculto">
+
+<div class="glass historia">
+
+<h2>
+
+Hola...
+
+</h2>
+
+<p id="textoIntro">
+
+</p>
+
+<button id="continuar">
+
+Sí, quiero ❤️
+
+</button>
+
+</div>
+
+</section>
+
+<script src="script.js"></script>
+</audio>
+ <audio id="musica" loop>
+    <source src="music/surething.mp3" type="audio/mpeg">
+</audio>
+</body>
+</html> 
+
+/* ===============================
+   NUESTRA HISTORIA ❤️
+   script.js
+================================ */
+
+// Frases que aparecerán al azar
+const frases = [
+    "No importa la distancia... siempre encontraré el camino hacia ti. ❤️",
+    "Hoy te extraño un poquito más. 🌹",
+    "Cada día es un paso menos para volver a verte. ✨",
+    "Siempre voy a elegirte. ❤️",
+    "Quiero verte para vivir los mejores días de mi vida contigo. 💖",
+    "Gracias por creer en nosotros. 🌸",
+    "La distancia nunca podrá con lo que siento por ti. ❤️",
+    "Eres mi lugar favorito, incluso desde lejos. 🥹"
+];
+
+// Texto de introducción
+const historia = `
+
+Hola, Natasha. ❤️
+
+Este pequeño rincón fue creado especialmente para ti.
+
+Cada pantalla, cada detalle y cada palabra fueron hechos pensando en nosotros.
+
+Quiero que este juego te recuerde cuánto significas para mí.
+
+Y quiero verte para vivir los mejores días de mi vida contigo.
+
+Espero que ese momento llegue muy pronto.
+
+Comencemos nuestra historia...
+
+`;
+
+const frase = document.getElementById("frase");
+const btnComenzar = document.getElementById("btnComenzar");
+const inicio = document.getElementById("inicio");
+const intro = document.getElementById("intro");
+const textoIntro = document.getElementById("textoIntro");
+
+// Mostrar frase aleatoria
+frase.innerHTML = `"${frases[Math.floor(Math.random() * frases.length)]}"`;
+
+// Corazones flotando
+function crearCorazon(){
+
+    const corazon = document.createElement("div");
+
+    corazon.classList.add("heart");
+
+    corazon.innerHTML = "❤️";
+
+    corazon.style.left = Math.random() * 100 + "%";
+
+    corazon.style.animationDuration = (6 + Math.random() * 5) + "s";
+
+    corazon.style.fontSize = (15 + Math.random() * 25) + "px";
+
+    document.getElementById("hearts").appendChild(corazon);
+
+    setTimeout(() => {
+        corazon.remove();
+    }, 12000);
+
+}
+
+setInterval(crearCorazon, 400);
+
+// Botón comenzar 
+btnComenzar.addEventListener("click", ()=>{
+const musica = document.getElementById("musica");
+
+btnComenzar.addEventListener("click", () => {
+
+    musica.play();
+
+    inicio.style.display = "none";
+    intro.style.display = "flex";
+
+    escribirTexto(historia);
+
+});
+    inicio.style.display="none";
+
+    intro.style.display="flex";
+
+    escribirTexto(historia);
+
+});
+
+// Efecto máquina de escribir
+function escribirTexto(texto){
+
+    textoIntro.innerHTML="";
+
+    let i=0;
+
+    const velocidad=35;
+
+    function escribir(){
+
+        if(i<texto.length){
+
+            textoIntro.innerHTML+=texto.charAt(i);
+
+            i++;
+
+            setTimeout(escribir,velocidad);
+
+        }
+
+    }
+
+    escribir();
+
+}
+
+// Botón continuar
+document.getElementById("continuar").addEventListener("click",()=>{
+
+    alert("💖 Aquí comenzará el Capítulo 1: Nuestra Historia. Lo construiremos en el siguiente paso.");
+
+});
+/* ===========================
+   NUESTRA HISTORIA ❤️
+   style.css
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
+
+    color:white;
+
+    overflow:hidden;
+
+    min-height:100vh;
+
+}
+
+/* Fondo */
+
+.background{
+
+    position:fixed;
+
+    width:100%;
+    height:100%;
+
+    top:0;
+    left:0;
+
+    background:
+
+    radial-gradient(circle at top,#ec489944,transparent 35%),
+
+    radial-gradient(circle at bottom,#fb718544,transparent 35%),
+
+    linear-gradient(135deg,#0f172a,#111827);
+
+    z-index:-3;
+
+}
+
+/* Contenedor de corazones */
+
+#hearts{
+
+    position:fixed;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+}
+
+/* Cada corazón */
+
+.heart{
+
+    position:absolute;
+
+    color:#ff7aa8;
+
+    font-size:20px;
+
+    animation:floatHeart linear forwards;
+
+    opacity:.7;
+
+}
+
+@keyframes floatHeart{
+
+    from{
+
+        transform:translateY(100vh) scale(.5);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:.7;
+
+    }
+
+    to{
+
+        transform:translateY(-120px) scale(1.2);
+
+        opacity:0;
+
+    }
+
+}
+
+/* Secciones */
+
+section{
+
+    width:100%;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+}
+
+/* Oculto */
+
+.oculto{
+
+    display:none;
+
+}
+
+/* Tarjeta de cristal */
+
+.glass{
+
+    width:min(90%,700px);
+
+    padding:45px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+
+    0 0 30px rgba(255,105,180,.15);
+
+    text-align:center;
+
+}
+
+/* Título */
+
+.tituloPequeño{
+
+    font-family:'Dancing Script',cursive;
+
+    font-size:40px;
+
+    color:#ffb4cf;
+
+    margin-bottom:10px;
+
+}
+
+h1{
+
+    font-size:55px;
+
+    margin-bottom:25px;
+
+}
+
+.frase{
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    color:#f5d7e5;
+
+    margin-bottom:35px;
+
+}
+
+/* Botones */
+
+button{
+
+    padding:15px 45px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:white;
+
+    background:linear-gradient(90deg,#ec4899,#fb7185);
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(255,105,180,.35);
+
+}
+
+button:hover{
+
+    transform:translateY(-4px) scale(1.05);
+
+    box-shadow:0 15px 35px rgba(255,105,180,.45);
+
+}
+
+/* Intro */
+
+.historia h2{
+
+    font-size:42px;
+
+    margin-bottom:25px;
+
+}
+
+#textoIntro{
+
+    font-size:22px;
+
+    line-height:2;
+
+    min-height:180px;
+
+    margin-bottom:35px;
+
+}
+
+/* Animación de aparición */
+
+.glass{
+
+    animation:aparecer 1s ease;
+
+}
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Responsive */
+
+@media(max-width:700px){
+
+h1{
+
+font-size:38px;
+
+}
+
+.tituloPequeño{
+
+font-size:32px;
+
+}
+
+.frase{
+
+font-size:18px;
+
+}
+
+.glass{
+
+padding:30px;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+}
