@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nuestra Historia ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="hearts"></div>
+
+<div class="background"></div>
+
+<section id="inicio">
+
+<div class="glass">
+
+<h2 class="tituloPequeño">
+Nuestra Historia
+</h2>
+
+<h1>
+Agustín ❤️ Natasha
+</h1>
+
+<p class="frase" id="frase">
+
+"No importa la distancia...
+
+siempre encontraré el camino hacia ti."
+
+</p>
+
+<button id="btnComenzar">
+
+Comenzar ❤️
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<section id="intro" class="oculto">
+
+<div class="glass historia">
+
+<h2>
+
+Hola...
+
+</h2>
+
+<p id="textoIntro">
+
+</p>
+
+<button id="continuar">
+
+Sí, quiero ❤️
+
+</button>
+
+</div>
+
+</section>
+
+<script src="script.js"></script>
+</audio>
+ <audio id="musica" loop>
+    <source src="music/surething.mp3" type="audio/mpeg">
+</audio>
+</body>
+</html> 
