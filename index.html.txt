@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nuestra Historia ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Música -->
+    <audio id="music" loop>
+        <source src="music/surething.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- Corazones flotando -->
+    <div id="hearts"></div>
+
+
+    <!-- PANTALLA INICIAL -->
+
+    <section class="screen active" id="inicio">
+
+        <div class="welcome">
+
+            <h1>
+                ❤️ Nuestra Historia
+            </h1>
+
+            <h2>
+                Un pequeño regalo para Natasha
+            </h2>
+
+
+            <p>
+                Una historia hecha con mucho cariño,
+                recuerdos y momentos que significan todo.
+            </p>
+
+
+            <button onclick="startStory()">
+                Comenzar nuestra historia ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- INTRODUCCIÓN -->
+
+    <section class="screen" id="intro">
+
+        <div class="content">
+
+            <h2>
+                Hola Natasha ❤️
+            </h2>
+
+
+            <p class="typing">
+                Si estás leyendo esto,
+                es porque quería hacer algo diferente...
+            </p>
+
+
+            <p>
+                No es solamente una página.
+                Es un pequeño lugar donde guardé
+                una parte de nuestra historia.
+            </p>
+
+
+            <button onclick="nextScreen('capitulo1')">
+                Continuar ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CAPÍTULO 1 -->
+
+    <section class="screen" id="capitulo1">
+
+        <div class="content">
+
+            <h2>
+                Capítulo I
+            </h2>
+
+
+            <h3>
+                Una pregunta importante...
+            </h3>
+
+
+            <p>
+                ¿Quién es la persona que hace
+                tus días más especiales?
+            </p>
+
+
+            <div class="answers">
+
+                <button onclick="correctAnswer()">
+                    Natasha ❤️
+                </button>
+
+
+                <button onclick="wrongAnswer()">
+                    Otra persona 😢
+                </button>
+
+            </div>
+
+
+            <p id="answerMessage"></p>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CAPÍTULO 2 -->
+
+    <section class="screen" id="capitulo2">
+
+        <div class="content">
+
+            <h2>
+                Capítulo II 🎵
+            </h2>
+
+
+            <p>
+                Hay canciones que guardan recuerdos...
+            </p>
+
+
+            <p>
+                Y esta siempre tendrá un significado especial.
+            </p>
+
+
+            <button onclick="playMusic()">
+                Escuchar nuestra canción 🎵
+            </button>
+
+
+            <button onclick="nextScreen('album')">
+                Continuar ❤️
+            </button>
+
+
+        </div>
+
+    </section>
+    
+    <!-- ÁLBUM -->
+
+    <section class="screen" id="album">
+
+        <div class="content">
+
+            <h2>
+                Capítulo III 📸
+            </h2>
+
+
+            <h3>
+                Nuestros recuerdos
+            </h3>
+
+
+            <p>
+                Cada momento tiene una historia
+                y cada recuerdo guarda algo especial.
+            </p>
+
+
+            <div class="gallery">
+
+                <div class="photo">
+                    <img src="img/foto1.jpg" alt="Nuestro recuerdo">
+                    <p>Un momento especial ❤️</p>
+                </div>
+
+
+                <div class="photo">
+                    <img src="img/foto2.jpg" alt="Nuestro recuerdo">
+                    <p>Una sonrisa que siempre recordaré ❤️</p>
+                </div>
+
+
+                <div class="photo">
+                    <img src="img/foto3.jpg" alt="Nuestro recuerdo">
+                    <p>Un recuerdo más de nosotros 🌹</p>
+                </div>
+
+
+                <div class="photo">
+                    <img src="img/foto4.jpg" alt="Nuestro recuerdo">
+                    <p>Momentos que valen oro ✨</p>
+                </div>
+
+
+            </div>
+
+
+            <button onclick="nextScreen('sobre')">
+                Tengo algo más para vos 💌
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- SOBRE -->
+
+    <section class="screen" id="sobre">
+
+        <div class="content">
+
+
+            <h2>
+                Algo especial...
+            </h2>
+
+
+            <p>
+                Preparé una pequeña carta para vos.
+            </p>
+
+
+            <div class="envelope" onclick="openLetter()">
+
+                💌
+
+                <p>
+                    Haz clic para abrir
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- CARTA -->
+
+    <section class="screen" id="carta">
+
+        <div class="content letter">
+
+
+            <h2>
+                Para Natasha ❤️
+            </h2>
+
+
+            <p id="letterText">
+
+            </p>
+
+
+
+            <button onclick="nextScreen('final')">
+
+                Continuar 🌹
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+
+
+
+    <!-- FINAL -->
+
+    <section class="screen" id="final">
+
+
+        <div class="content final">
+
+
+            <h1>
+                ❤️
+            </h1>
+
+
+            <h2>
+                Nuestra historia recién comienza
+            </h2>
+
+
+            <p>
+                Gracias por cada momento,
+                cada sonrisa y cada recuerdo.
+            </p>
+
+
+            <p>
+                Espero que algún día podamos mirar
+                todo esto juntos y decir:
+            </p>
+
+
+            <h3>
+                "Mira todo lo que vivimos..." ❤️
+            </h3>
+
+
+            <div class="future-photo">
+
+                📷
+
+                <p>
+                    Este espacio está reservado
+                    para nuestra primera foto juntos.
+                </p>
+
+            </div>
+
+
+
+            <h2>
+                ∞
+            </h2>
+
+
+
+            <p>
+                Con muchísimo amor,
+            </p>
+
+
+            <h2>
+                Agustín ❤️
+            </h2>
+
+
+
+            <button onclick="restartStory()">
+
+                ❤️ Volver al comienzo
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
